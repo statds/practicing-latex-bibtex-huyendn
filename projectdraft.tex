@@ -50,7 +50,7 @@
 			\theta_{t+1} = \arg \max_\theta Q(\theta \vert \theta_t)
 		\end{equation}
 	\end{itemize}
-	The maximum likelihood estimate of $\theta$ is then the best of local maximums obtained by iterations of the EM algorithm. To show why the EM algorithm works, we can use the Jensen's inequality by the concavity of the natural logarithm function. Let $p(\cdot \vert \cdot)$ denote the general conditional probability density function.
+	The maximum likelihood estimate of $\theta$ is then the best of local maximums obtained by iterations of the EM algorithm. To show why the EM algorithm works, we can use the Jensen's inequality by the concavity of the natural logarithm function (\cite{roche2011algorithm}). Let $p(\cdot \vert \cdot)$ denote the general conditional probability density function.
 	\begin{equation}
 		\begin{split}
 			\ell(\theta; X) - \ell (\theta_t; X)
@@ -61,7 +61,9 @@
 			& = Q(\theta \vert \theta_t) - Q(\theta_t \vert \theta_t)
 		\end{split}
 	\end{equation}
-	Thus, any value of $\theta$ that increases $Q(\theta \vert \theta_t)$ beyond $Q(\theta_t \vert \theta_t)$ will also increase $\ell(\theta; X)$ beyond $\ell(\theta_t; X)$. There are numerous variants of the EM algorithm to adapt to practical applications. One of the issues commonly encountered is the intractability of the expectation in the E-step and an approximation method is needed to approximate the expectation. 
+	Thus, any value of $\theta$ that increases $Q(\theta \vert \theta_t)$ beyond $Q(\theta_t \vert \theta_t)$ will also increase $\ell(\theta; X)$ beyond $\ell(\theta_t; X)$ (\cite{roche2011algorithm}). There are numerous variants of the EM algorithm to adapt to practical applications. One of the issues commonly encountered is the intractability of the expectation in the E-step and an approximation method is needed to approximate the expectation. 
+	
+	In their paper, \cite{gunawardana2005convergence} introduced the generalized alternating minimization (GAM) framework and derive convergence results for variants of EM algorithm.
 	
 	In section \ref{gam}, we introduce the generalized alternating  minimization framework introduced by this paper and their convergence theorem result. Section \ref{incremental} and \ref{variational} present the results of GAM framework on the incremental EM Algorithm and the variational EM Algorithm, respectively.
 	 
@@ -75,5 +77,7 @@
 	
 	\section*{Appendix}
 	This is the Appendix section.
-
+	
+	\bibliographystyle{apalike}
+    \bibliography{projectrefs}
 \end{document}
